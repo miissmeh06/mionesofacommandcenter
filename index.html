@@ -353,11 +353,9 @@ async function dbGet(table, query='') {
       headers: {
         'apikey': SUPABASE_KEY,orders
         'Authorization': `Bearer ${SUPABASE_KEY}`,
-        'Content-Type': 'application/json'
-      });
-    return res.ok;
-  }
-
+        'Content-Type': 'application/json' 
+        }
+        
   // LOAD ORDERS
   async function loadOrders() {
     try {
