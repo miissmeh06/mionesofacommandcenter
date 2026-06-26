@@ -318,9 +318,6 @@ async function dbGet(table, query='') {
   }
   return await res.json();
 }
-    });
-    return res.json();
-  }
 
   async function dbPost(table, data) {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
