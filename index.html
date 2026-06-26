@@ -354,8 +354,7 @@ async function dbGet(table, query='') {
         'apikey': SUPABASE_KEY,orders
         'Authorization': `Bearer ${SUPABASE_KEY}`,
         'Content-Type': 'application/json'
-      }
-    });
+      });
     return res.ok;
   }
 
