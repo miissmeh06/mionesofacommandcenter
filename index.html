@@ -301,12 +301,12 @@
 
 // API HELPERS
 async function dbGet(table, query='') {
-  const url = ${SUPABASE_URL}/rest/v1/${table}?${query};
+  const url = `${SUPABASE_URL}/rest/v1/${table}?${query}`;
   const res = await fetch(url, {
     method: 'GET',
     headers: {
       'apikey': SUPABASE_KEY,
-      'Authorization': Bearer ${SUPABASE_KEY},
+      'Authorization': `Bearer ${SUPABASE_KEY}`,
       'Content-Type': 'application/json',
       'Prefer': 'return=representation'
     }
