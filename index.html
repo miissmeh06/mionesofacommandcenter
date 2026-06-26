@@ -351,7 +351,7 @@ async function dbGet(table, query='') {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${encodeURIComponent(id)}`, {
       method: 'DELETE',
       headers: {
-        'apikey': SUPABASE_KEY,orders
+        'apikey': SUPABASE_KEY,Orders
         'Authorization': `Bearer ${SUPABASE_KEY}`,
         'Content-Type': 'application/json' 
         }
