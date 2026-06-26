@@ -351,7 +351,8 @@ async function dbGet(table, query='') {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${encodeURIComponent(id)}`, {
       method: 'DELETE',
       headers: {
-        'apikey': SUPABASE_KEY,
+        'apikey': SUPABASE_KEY,orders
+        
         'Authorization': `Bearer ${SUPABASE_KEY}`,
         'Content-Type': 'application/json'
       }
@@ -362,7 +363,7 @@ async function dbGet(table, query='') {
   // LOAD ORDERS
   async function loadOrders() {
     try {
-      const data = await dbGet('orders');
+      const data = await dbGet('Orders');
       if (Array.isArray(data)) {
         orders = data;
         setLive(true);
