@@ -299,14 +299,25 @@
   let currentView = 'orders';
   let pollInterval = null;
 
-  // API HELPERS
-  async function dbGet(table, query='') {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?${query}&order=time.desc`, {
-      headers: {
-        'apikey': SUPABASE_KEY,
-        'Authorization': `Bearer ${SUPABASE_KEY}`,
-        'Content-Type': 'application/json'
-      }
+// API HELPERS
+async function dbGet(table, query='') {
+  const url = ${SUPABASE_URL}/rest/v1/${table}?${query};
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': Bearer ${SUPABASE_KEY},
+      'Content-Type': 'application/json',
+      'Prefer': 'return=representation'
+    }
+  });
+
+  if (!res.ok) {
+    console.error("Error fetching data:", await res.text());
+    return [];
+  }
+  return await res.json();
+}
     });
     return res.json();
   }
